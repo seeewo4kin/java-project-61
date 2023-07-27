@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class Cli {
 
-    public static void askName() {
+    static String playerName = Cli.setPlayerName();
 
-        Scanner s = new Scanner(System.in);
-        System.out.println("May I have your name?");
-        String name = s.nextLine();
-        String greeting = "Hello, " + name + "!";
-        System.out.println(greeting);
-
-
-
-
+    public static String setPlayerName() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hello, how can i call you?");
+        String name = scanner.nextLine();
+        return name;
     }
+    public static String getPlayerName(){
+      return playerName;
+    }
+
 }

@@ -2,27 +2,56 @@ package hexlet.code;
 import java.util.Scanner;
 public class App {
 
-    public static void main(String[] args) {
+    public static int gameChoice(){
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter.\n" + "1 - Greet\n" + "0 - Exit");
-        switch (scanner.nextInt()) {
+        System.out.println("Please enter the game number and press Enter." +
+                "\n" + "1 - Greet" +
+                "\n" + "2 - Even" +
+                "\n" + "3 - Calc" +
+                "\n" + "0 - Exit");
+        int choice = scanner.nextInt();
+        return choice;
+    }
+
+    public static void main(String[] args) {
+
+        while (App.gameChoice() != 0) {
+            App.choiceMenu();
+        }
+    }
+
+    public static void choiceMenu() {
+        switch (App.gameChoice()) {
 
             case 1:
                 System.out.println("Your choise: 1\n" + "\n" +
                         "Welcome to the Brain Games!");
-                Cli.askName();
+                Cli.getPlayerName();
+                System.out.println("Hello, " + Cli.getPlayerName() + "!");
+                App.gameChoice();
+
                 break;
             case 0:
                 System.out.println("Thanks for playing! Good Luck!");
-                break;
+                System.exit(1);
             case 2:
                 System.out.println("Your choise: 2\n" + "\n" +
                         "Welcome to the Brain Games!");
-                    Cli.askName();
-                 System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'. ");
+                Cli.getPlayerName();
+                Games.even();
+                App.gameChoice();
+            case 3:
+                System.out.println("Your choise: 3\n" + "\n" +
+                        "Welcome to the Brain Games!");
+                Cli.getPlayerName();
+                Games.Calc();
+                App.gameChoice();
+
         }
 
 
     }
+
+
 }
