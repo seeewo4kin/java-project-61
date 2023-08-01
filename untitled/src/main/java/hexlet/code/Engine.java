@@ -12,6 +12,10 @@ public class Engine {
         int value = ThreadLocalRandom.current().nextInt(1, 19+1);
         return value;
     }
+    public static int randValue10(){
+        int value = ThreadLocalRandom.current().nextInt(1, 9+1);
+        return value;
+    }
     public static int randCalcAct(){
         int value = ThreadLocalRandom.current().nextInt(1,2+1);
         return  value;

@@ -93,6 +93,75 @@ public class Games {
         }
         System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
     }
+
+
+    public static void GCD(){
+        Scanner scan = new Scanner(System.in);
+        for (int score = 0; score < 3; ) {
+
+            int first = Engine.randValue();
+            int second = Engine.randValue();
+            int answer = 0;
+
+            for (int answ = 1; answ <= 100; answ++) {
+
+                if (first % answ == 0 && second % answ == 0) {
+                    answer = answ;
+                }
+            }
+                System.out.println("Question: " + first + "  " + second + "\n");
+                int playerAnswer = Integer.parseInt(scan.nextLine());
+                int tmpansw = playerAnswer;
+                System.out.println("Your answer: " + tmpansw);
+                if (tmpansw == answer) {
+                    System.out.println("Correct!\n");
+                    score++;
+                } else if (tmpansw != answer) {
+                    System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n");
+                    score = 0;
+
+            }
+        }
+        System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
+    }
+
+
+    public static void Progression(){
+        Scanner scan = new Scanner(System.in);
+        for (int score = 0; score < 3; ) {
+
+            int step = Engine.randValue10();
+            int dots = Engine.randValue10();
+            int first = Engine.randValue10();
+            int answer = first + step * (dots - 1 );
+            String[] array = new String[10];
+
+            for (int i = 0; i < 10; i++) {
+                int tmpansw  = first + step * i;
+                if (i == dots) { array[i] = ".."; }
+                else {array[i] = "" + tmpansw;}
+            }
+
+            System.out.println("Question: " + array + "\n");
+            int playerAnswer = Integer.parseInt(scan.nextLine());
+            int tmpansw = playerAnswer;
+            System.out.println("Your answer: " + tmpansw);
+            if (tmpansw == answer) {
+                System.out.println("Correct!\n");
+                score++;
+            } else if (tmpansw != answer) {
+                System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n");
+                score = 0;
+
+            }
+        }
+        System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
+
+    }
 }
+
+
+
+
 
 
