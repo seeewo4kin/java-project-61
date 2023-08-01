@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Cli {
 
-    static String playerName = Cli.setPlayerName();
+    static final String playerName = Cli.setPlayerName();
 
     public static String setPlayerName() {
         Scanner scanner = new Scanner(System.in);

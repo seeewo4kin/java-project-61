@@ -16,42 +16,44 @@ public class App {
 
     public static void main(String[] args) {
 
-        while (App.gameChoice() != 0) {
             App.choiceMenu();
-        }
     }
 
     public static void choiceMenu() {
-        switch (App.gameChoice()) {
-
-            case 1:
-                System.out.println("Your choise: 1\n" + "\n" +
-                        "Welcome to the Brain Games!");
-                Cli.getPlayerName();
-                System.out.println("Hello, " + Cli.getPlayerName() + "!");
-                App.gameChoice();
-
-                break;
-            case 0:
-                System.out.println("Thanks for playing! Good Luck!");
-                System.exit(1);
-            case 2:
-                System.out.println("Your choise: 2\n" + "\n" +
-                        "Welcome to the Brain Games!");
-                Cli.getPlayerName();
-                Games.even();
-                App.gameChoice();
-            case 3:
-                System.out.println("Your choise: 3\n" + "\n" +
-                        "Welcome to the Brain Games!");
-                Cli.getPlayerName();
-                Games.Calc();
-                App.gameChoice();
-
-        }
+        boolean end = true;
 
 
+        do {
+            switch (App.gameChoice()) {
+
+                case 1:
+                    System.out.println("Your choise: 1\n" + "\n" +
+                            "Welcome to the Brain Games!");
+                    Cli.getPlayerName();
+                    System.out.println("Hello, " + Cli.getPlayerName() + "!");
+
+                    break;
+                case 0:
+                    System.out.println("Thanks for playing! Good Luck!");
+                    System.exit(1);
+                    end = false;
+                case 2:
+                    System.out.println("Your choise: 2\n" + "\n" +
+                            "Welcome to the Brain Games!");
+                    Cli.getPlayerName();
+                    Games.even();
+                    break;
+                case 3:
+                    System.out.println("Your choise: 3\n" + "\n" +
+                            "Welcome to the Brain Games!");
+                    Cli.getPlayerName();
+                    Games.Calc();
+                    break;
+            }
+        }while (end == true) ;
+        System.exit(1);
     }
-
-
 }
+
+
+
