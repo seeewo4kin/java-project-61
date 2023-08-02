@@ -11,6 +11,8 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
+                6 - Prime
                 0 - Exit""");
         return scanner.nextInt();
     }
@@ -64,6 +66,21 @@ public class App {
                     Cli.getPlayerName();
                     Games.GCD();
                     break;
+                case 5:
+                    System.out.println("""
+                            Your choose: 5
+
+                            Welcome to the Brain Games!""");
+                    Cli.getPlayerName();
+                    Games.Progression();
+                    break;
+                case 6:
+                    System.out.println("""
+                            Your choose: 6
+
+                            Welcome to the Brain Games!""");
+                    Cli.getPlayerName();
+                    Games.Prime();
                 }
             }
             while (end == true) ;

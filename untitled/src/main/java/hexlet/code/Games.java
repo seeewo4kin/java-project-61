@@ -1,8 +1,10 @@
 package hexlet.code;
 
+import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Scanner;
 import java.util.Random;
+import java.math.BigInteger;
 
 public class Games {
     public static void even() {
@@ -103,7 +105,7 @@ public class Games {
             int second = Engine.randValue();
             int answer = 0;
 
-            for (int answ = 1; answ <= 100; answ++) {
+            for (int answ = 1; answ <= 100; answ--) {
 
                 if (first % answ == 0 && second % answ == 0) {
                     answer = answ;
@@ -133,7 +135,7 @@ public class Games {
             int step = Engine.randValue10();
             int dots = Engine.randValue10();
             int first = Engine.randValue10();
-            int answer = first + step * (dots - 1 );
+            int answer = first + step * (dots );
             String[] array = new String[10];
 
             for (int i = 0; i < 10; i++) {
@@ -142,7 +144,7 @@ public class Games {
                 else {array[i] = "" + tmpansw;}
             }
 
-            System.out.println("Question: " + array + "\n");
+            System.out.println("Question: " + Arrays.toString(array) + "\n");
             int playerAnswer = Integer.parseInt(scan.nextLine());
             int tmpansw = playerAnswer;
             System.out.println("Your answer: " + tmpansw);
@@ -154,6 +156,35 @@ public class Games {
                 score = 0;
 
             }
+        }
+        System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
+
+    }
+
+
+    public static void Prime(){
+        Scanner scan = new Scanner(System.in);
+        for (int score = 0; score < 3; ) {
+
+            int first = Engine.randValue();
+
+            boolean isSimple = Engine.isSimple(first);
+
+            System.out.println("Question: " + first + "\n");
+
+            String playerAnswer = scan.nextLine();
+            String tmpansw = playerAnswer;
+            System.out.println("Your answer: " + tmpansw + "\n");
+            if (tmpansw.toLowerCase().equals("yes") && isSimple == true) {
+                System.out.println("Correct!\n");
+                score++;
+            } 
+
+            else if (tmpansw.toLowerCase().equals("no") && isSimple == false) {
+                System.out.println("Correct!\n");
+                score++;
+            }
+        else {System.out.println("Your answer is incorrect"); score = 0;}
         }
         System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
 
