@@ -34,7 +34,6 @@ public class App {
                             Your choose: 1
 
                             Welcome to the Brain Games!""");
-                    Cli.getPlayerName();
                     System.out.println("Hello, " + Cli.getPlayerName() + "!");
 
                     break;
@@ -56,7 +55,7 @@ public class App {
 
                             Welcome to the Brain Games!""");
                     Cli.getPlayerName();
-                    Games.Calc();
+                    Games.сalc();
                     break;
                 case 4:
                     System.out.println("""
@@ -72,7 +71,7 @@ public class App {
 
                             Welcome to the Brain Games!""");
                     Cli.getPlayerName();
-                    Games.Progression();
+                    Games.progression();
                     break;
                 case 6:
                     System.out.println("""
@@ -80,11 +79,11 @@ public class App {
 
                             Welcome to the Brain Games!""");
                     Cli.getPlayerName();
-                    Games.Prime();
-                }
+                    Games.prime();
             }
-            while (end == true) ;
-            System.exit(1);
+        }
+        while (end);
+        System.exit(1);
     }
 }
 

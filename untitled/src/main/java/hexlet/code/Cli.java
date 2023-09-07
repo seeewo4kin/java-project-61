@@ -1,19 +1,27 @@
+
 package hexlet.code;
 
 import java.util.Scanner;
 
 public class Cli {
 
-    static final String playerName = Cli.setPlayerName();
+    static String playerName = "";
 
     public static String setPlayerName() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hello, how can i call you?");
         String name = scanner.nextLine();
-        return name;
+        Cli.playerName = name;
+
+        return Cli.playerName;
     }
-    public static String getPlayerName(){
-      return playerName;
+    public static String getPlayerName() {
+
+        if (Cli.playerName.equals("")) {
+
+            Cli.setPlayerName();
+        }
+        return playerName;
     }
 
 }

@@ -1,10 +1,8 @@
 package hexlet.code;
 
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.Scanner;
 import java.util.Random;
-import java.math.BigInteger;
 
 public class Games {
     public static void even() {
@@ -14,7 +12,7 @@ public class Games {
         int score = 0;
 
         if (score < 3) {
-            for (int i = 0; i < 3; ) {
+            for (int i = 0; i < 3;) {
 
                 int timeValue = Engine.randValue();
                 System.out.println("Question: " + timeValue);
@@ -27,10 +25,12 @@ public class Games {
                     System.out.println("Correct!\n");
                     i++;
                 } else if (timeValue % 2 == 0 && answer != "yes") {
-                    System.out.println("'" + tmpansw + "' " + "is wrong answer ;(. Correct answer was 'yes'.\n Let`s try again " + "" + Cli.getPlayerName());
+                    System.out.println("'" + tmpansw + "' " + "is wrong answer ;"
+                            + "(. Correct answer was 'yes'.\n Let`s try again " + "" + Cli.getPlayerName());
                     i = 0;
                 } else if (timeValue % 2 != 0 && answer != "no") {
-                    System.out.println("'" + tmpansw + "' " + "is wrong answer ;(. Correct answer was 'no'. \n Let`s try again " + Cli.getPlayerName());
+                    System.out.println("'" + tmpansw + "' " + "is wrong answer ;"
+                            + "(. Correct answer was 'no'. \n Let`s try again " + Cli.getPlayerName());
                     i = 0;
                 }
             }
@@ -39,9 +39,9 @@ public class Games {
     }
 
 
-    public static void Calc() {
+    public static void сalc() {
         Scanner scan = new Scanner(System.in);
-        for (int score = 0; score < 3; ) {
+        for (int score = 0; score < 3;) {
 
             int first = Engine.randValue20();
             int second = Engine.randValue20();
@@ -58,7 +58,8 @@ public class Games {
                     System.out.println("Correct!\n");
                     score++;
                 } else if (tmpansw != answer) {
-                    System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n");
+                    System.out.println("'" + playerAnswer + "' is wrong answer ;"
+                            + "(. Correct answer was '" + answer + "'.\n");
                     score = 0;
                 }
             } else if (act == 1) {
@@ -72,7 +73,8 @@ public class Games {
                     System.out.println("Correct!\n");
                     score++;
                 } else if (tmpansw != answer) {
-                    System.out.println("'" + tmpansw + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n"
+                    System.out.println("'" + tmpansw + "' is wrong answer ;"
+                            + "(. Correct answer was '" + answer + "'.\n"
                             + "\n" + "Let`s try again, " + Cli.getPlayerName() + "!");
                     score = 0;
                 }
@@ -87,8 +89,9 @@ public class Games {
                     System.out.println("Correct!\n");
                     score++;
                 } else if (tmpansw != answer) {
-                    System.out.println("'" + tmpansw + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n"
-                    + "\n" + "Let`s try again, " + Cli.getPlayerName() + "!");
+                    System.out.println("'" + tmpansw + "' is wrong answer ;"
+                            + "(. Correct answer was '" + answer + "'.\n"
+                        + "\n" + "Let`s try again, " + Cli.getPlayerName() + "!");
                     score = 0;
                 }
             }
@@ -97,9 +100,9 @@ public class Games {
     }
 
 
-    public static void GCD(){
+    public static void GCD() {
         Scanner scan = new Scanner(System.in);
-        for (int score = 0; score < 3; ) {
+        for (int score = 0; score < 3;) {
 
             int first = Engine.randValue();
             int second = Engine.randValue();
@@ -111,16 +114,17 @@ public class Games {
                     answer = answ;
                 }
             }
-                System.out.println("Question: " + first + "  " + second + "\n");
-                int playerAnswer = Integer.parseInt(scan.nextLine());
-                int tmpansw = playerAnswer;
-                System.out.println("Your answer: " + tmpansw);
-                if (tmpansw == answer) {
-                    System.out.println("Correct!\n");
-                    score++;
-                } else if (tmpansw != answer) {
-                    System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n");
-                    score = 0;
+            System.out.println("Question: " + first + "  " + second + "\n");
+            int playerAnswer = Integer.parseInt(scan.nextLine());
+            int tmpansw = playerAnswer;
+            System.out.println("Your answer: " + tmpansw);
+            if (tmpansw == answer) {
+                System.out.println("Correct!\n");
+                score++;
+            } else if (tmpansw != answer) {
+                System.out.println("'" + playerAnswer + "' is wrong answer ;"
+                        + "(. Correct answer was '" + answer + "'.\n");
+                score = 0;
 
             }
         }
@@ -128,20 +132,23 @@ public class Games {
     }
 
 
-    public static void Progression(){
+    public static void progression() {
         Scanner scan = new Scanner(System.in);
-        for (int score = 0; score < 3; ) {
+        for (int score = 0; score < 3;) {
 
             int step = Engine.randValue10();
             int dots = Engine.randValue10();
             int first = Engine.randValue10();
-            int answer = first + step * (dots );
+            int answer = first + step * (dots);
             String[] array = new String[10];
 
             for (int i = 0; i < 10; i++) {
                 int tmpansw  = first + step * i;
-                if (i == dots) { array[i] = ".."; }
-                else {array[i] = "" + tmpansw;}
+                if (i == dots) {
+                    array[i] = "..";
+                } else {
+                    array[i] = "" + tmpansw;
+                }
             }
 
             System.out.println("Question: " + Arrays.toString(array) + "\n");
@@ -152,7 +159,8 @@ public class Games {
                 System.out.println("Correct!\n");
                 score++;
             } else if (tmpansw != answer) {
-                System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.\n");
+                System.out.println("'" + playerAnswer + "' is wrong answer ;"
+                        + "(. Correct answer was '" + answer + "'.\n");
                 score = 0;
 
             }
@@ -162,9 +170,9 @@ public class Games {
     }
 
 
-    public static void Prime(){
+    public static void prime() {
         Scanner scan = new Scanner(System.in);
-        for (int score = 0; score < 3; ) {
+        for (int score = 0; score < 3;) {
 
             int first = Engine.randValue();
 
@@ -175,16 +183,15 @@ public class Games {
             String playerAnswer = scan.nextLine();
             String tmpansw = playerAnswer;
             System.out.println("Your answer: " + tmpansw + "\n");
-            if (tmpansw.toLowerCase().equals("yes") && isSimple == true) {
+            if (tmpansw.toLowerCase().equals("yes") && isSimple) {
                 System.out.println("Correct!\n");
                 score++;
-            } 
-
-            else if (tmpansw.toLowerCase().equals("no") && isSimple == false) {
+            } else if (tmpansw.toLowerCase().equals("no") && !isSimple) {
                 System.out.println("Correct!\n");
                 score++;
+            } else {
+                System.out.println("Your answer is incorrect"); score = 0;
             }
-        else {System.out.println("Your answer is incorrect"); score = 0;}
         }
         System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
 
